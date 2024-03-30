@@ -1,3 +1,13 @@
+.form-select {
+    font-weight: bold;
+    font-size: 20pt;
+    width: 200px;
+    height: 60px;
+    text-align: justify;
+    border: 1px solid black;
+    border-radius: 8px;
+}
+
 #horizen_line {
     width: 100%;
     border-bottom: 1px solid black;
@@ -59,14 +69,9 @@
 }
 
 #today_product>h1 {
+    color: red;
     text-align: center;
     margin-top: 20px;
-}
-
-#today_product p {
-    position: absolute;
-    left: 1070px;
-    top: 720px;
 }
 
 #product_items>#product1 {
@@ -81,20 +86,20 @@
 
 #product_items>#product1>ul>li {
     float: left;
-    margin: 60px 60px;
+    margin: 60px 10px;
 }
 
 #product_items>#product1>ul>li>a {
-    display: block;
+    display: inline-block;
     padding: 8px 12px;
 }
 
-#product_items>#product1>ul>li>a>img {
+#product_items>#product1>ul>li>button>a>img {
     border-radius: 80px;
 }
 
 #main_footer {
-    margin-top: 1200px;
+    margin-top: 800px;
     margin-bottom: 10px;
     padding-top: 30px;
     padding-bottom: 5px;

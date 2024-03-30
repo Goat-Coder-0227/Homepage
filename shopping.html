@@ -1,37 +1,85 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shopping</title>
+    <title>!!최고의 쇼핑 염소몰!!</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="./init.css">
-    <link rel="stylesheet" href="./bootstrap.css">
     <link rel="stylesheet" href="./layout.css">
+    <style type="text/css">
+    </style>
 </head>
 
 <body>
-    <!--헤더(로고 및 검색창) 영역-->
     <header id="main_header">
         <div id="horizen_line"></div>
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <!-- 로그인창 제목(헤더) 부분-->
+                    <div style="border-bottom: 0px; padding-bottom: 0px;" class="modal-header">
+                        <h1 class="modal-title">로그인</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <!-- 로그인창 정보(바디) 부분-->
+                    <div style="padding-top: 0px;" class="modal-body">
+                        <!-- 아이디, 비밀번호, 로봇 체크 부분-->
+                        <form class="was-validated">
+                            <div class="mb-3 mt-3">
+                                <label for="uname" class="form-label">아이디:</label> <input type="text"
+                                    class="form-control" id="uname" placeholder="email@goat.com" name="uname" required>
+                                <div class="valid-feedback">사용가능한 아이디입니다.</div>
+                                <div class="invalid-feedback">아이디를 입력해주세요.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="pwd" class="form-label">비밀번호:</label> <input type="password"
+                                    class="form-control" id="pwd" placeholder="⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎" name="pswd" required>
+                                <div class="valid-feedback">사용가능한 비밀번호입니다.</div>
+                                <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" id="myCheck" name="remember" required>
+                                <label class="form-check-label" for="myCheck">로봇인지 아닌지 확인</label>
+                                <div class="valid-feedback">로봇아님</div>
+                                <div class="invalid-feedback">로봇임</div>
+                            </div>
+                        </form>
+
+                        <!--로그인, 닫기 버튼 부분-->
+                        <form class="info_remember">
+                            <button style="float: left; margin-top: 15px; margin-left: 15px;" type="submit"
+                                class="btn btn-primary">로그인</button>
+                        </form>
+                        <div style="float: right; border-top: 0px;" class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">닫기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--고정된 네비게이션(nav) 부분-->
         <div class="fixed-top">
             <div id="logo_header">
                 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="./shopping.html">
-                            <img src="./image/goat.jpg" alt="" style="width:40px; height:35px;" class="rounded-circle">
-                        </a>
-                        <a class="navbar-brand" href="javascript:void(0)">Goat Shopping</a>
+                        <!-- 왼쪽 쇼밍폴 이름, 로고 부분-->
+                        <a class="navbar-brand" href="./shopping.html"> <img src="./image/goat.jpg" alt=""
+                                style="width: 40px; height: 35px;" class="rounded-circle"></a>
+                        <a class="navbar-brand" href="./shopping.html">GoatShopping</a>
+
+                        <!-- 왼쪽 메뉴 부분-->
                         <div class="collapse navbar-collapse" id="mynavbar">
                             <ul class="navbar-nav me-auto">
                                 <div class="dropdown">
                                     <button
-                                        style="background-color:rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important; border-color:rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;"
-                                        type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                        고객센터
-                                    </button>
+                                        style="background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important; border-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;"
+                                        type="button" class="btn btn-primary dropdown-toggle"
+                                        data-bs-toggle="dropdown">고객센터</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">자주묻는질문</a></li>
                                         <li><a class="dropdown-item" href="#">1:1 채팅문의</a></li>
@@ -41,10 +89,9 @@
                                 </div>
                                 <div class="dropdown">
                                     <button
-                                        style="background-color:rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important; border-color:rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;"
-                                        type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-                                        입점신청
-                                    </button>
+                                        style="background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important; border-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;"
+                                        type="button" class="btn btn-primary dropdown-toggle"
+                                        data-bs-toggle="dropdown">입점신청</button>
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" href="#">오픈마켓</a></li>
                                         <li><a class="dropdown-item" href="#">로켓배송</a></li>
@@ -52,67 +99,18 @@
                                     </ul>
                                 </div>
                             </ul>
+
+                            <!-- 오른쪽 로그인, 회원가입 부분-->
                             <div class="d-flex">
                                 <ul class="navbar-nav me-auto">
                                     <li class="nav-item">
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                            data-bs-target="#myModal">
-                                            로그인
-                                        </button>
-                                        <div class="modal" id="myModal">
-                                            <div class="modal-dialog modal-dialog-centered">
-                                                <div class="modal-content">
-
-                                                    <div class="modal-header">
-                                                        <h1 class="modal-title">로그인</h1>
-                                                        <button type="button" class="btn-close"
-                                                            data-bs-dismiss="modal"></button>
-                                                    </div>
-
-                                                    <div class="modal-body">
-
-                                                        <form action="/action_page.php" class="was-validated">
-                                                            <div class="mb-3 mt-3">
-                                                                <label for="uname" class="form-label">아이디:</label>
-                                                                <input type="text" class="form-control" id="uname"
-                                                                    placeholder="email@goat.com" name="uname" required>
-                                                                <div class="valid-feedback">사용가능한 아이디입니다.</div>
-                                                                <div class="invalid-feedback">아이디를 입력해주세요.</div>
-                                                            </div>
-                                                            <div class="mb-3">
-                                                                <label for="pwd" class="form-label">비밀번호:</label>
-                                                                <input type="password" class="form-control" id="pwd"
-                                                                    placeholder="⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎⚫︎" name="pswd" required>
-                                                                <div class="valid-feedback">사용가능한 비밀번호입니다.</div>
-                                                                <div class="invalid-feedback">비밀번호를 입력해주세요.</div>
-                                                            </div>
-                                                            <div class="form-check mb-3">
-                                                                <input class="form-check-input" type="checkbox"
-                                                                    id="myCheck" name="remember" required>
-                                                                <label class="form-check-label" for="myCheck">로봇인지 아닌지
-                                                                    확인</label>
-                                                                <div class="valid-feedback">로봇아님</div>
-                                                                <div class="invalid-feedback">로봇임</div>
-                                                            </div>
-                                                        </form>
-
-                                                        <form class="info_remember">
-                                                            <button type="submit" class="btn btn-primary">로그인
-                                                            </button>
-                                                        </form>
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-danger"
-                                                                data-bs-dismiss="modal">닫기</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <button
+                                            style="background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important; border-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;"
+                                            type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                            data-bs-target="#myModal">로그인</button>
                                     </li>
-                                    <li class=" nav-item">
-                                        <a style="color:#fff;" class="nav-link" href="javascript:void(0)">회원가입</a>
-                                    </li>
+                                    <li class=" nav-item"><a style="color: #fff;" class="nav-link"
+                                            href="javascript:void(0)">회원가입</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -120,7 +118,11 @@
                 </nav>
             </div>
         </div>
+
+        <!-- 카테고리 , 검색창 및 소메뉴 부분-->
         <div id="search_header">
+
+            <!-- 카테고리 부분-->
             <div id="Category">
                 <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
                     <option selected disabled>카테고리</option>
@@ -136,17 +138,21 @@
                     <option value="8">문구</option>
                 </select>
             </div>
+
+            <!-- 검색창 부분-->
             <div id="search_bar">
                 <nav class="navbar navbar-light">
-                    <div class="container-fluid">
+                    <div style="display: block;" class="container-fluid">
                         <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="상품명을 입력해주세요!!"
-                                aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">검색</button>
+                            <input style="border: 1px solid green;" class="form-control me-2" type="search"
+                                placeholder="상품명을 입력해주세요!!" aria-label="Search">
+                            <button style="width: 90px;" class="btn btn-outline-success" type="submit">검색</button>
                         </form>
                     </div>
                 </nav>
             </div>
+
+            <!-- 검색창 오른쪽 소메뉴 부분-->
             <nav id="main_gnb">
                 <ul>
                     <li><a href="#">자주구매</a></li>
@@ -159,32 +165,32 @@
         </div>
     </header>
 
-    <!--콘텐츠(메인) 영역-->
+    <!-- 콘텐츠(메인) 부분-->
     <div id="content">
+
+        <!-- 중앙 큰 사진(슬라이드 넘김 가능) 부분-->
         <section id="main_section">
             <div id="demo" class="carousel slide" data-bs-ride="carousel">
-
                 <!-- Indicators/dots -->
                 <div class="carousel-indicators">
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
                     <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
                 </div>
-
-                <!-- The slideshow/carousel -->
+                <!-- 오른쪽으로 슬라이드-->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./image/snack.jpg" alt="Los Angeles" class="d-block" style="width:100%;">
+                        <img src="./image/snack.jpg" alt="Los Angeles" class="d-block"
+                            style="width: 100%; height: 500px;">
                     </div>
                     <div class="carousel-item">
-                        <img src="./image/week.jpg" alt="Chicago" class="d-block" style="width:100%;">
+                        <img src="./image/week.jpg" alt="Chicago" class="d-block" style="width: 100%; height: 500px;">
                     </div>
                     <div class="carousel-item">
-                        <img src="./image/talmo.jpg" alt="New York" class="d-block" style="width:100%;">
+                        <img src="./image/talmo.jpg" alt="New York" class="d-block" style="width: 100%; height: 500px;">
                     </div>
                 </div>
-
-                <!-- Left and right controls/icons -->
+                <!-- 왼쪽으로 슬라이드-->
                 <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
@@ -193,60 +199,99 @@
                 </button>
             </div>
         </section>
+
+        <!-- '오늘의 특가 세일 상품' 부분-->
         <div id="today_product">
-            <h1>오늘의 발견</h1>
-            <p>!Goat몰이 발견한 오늘의 가장 Hot한 상품!</p>
+            <h1>오늘의 특가 세일 상품</h1>
         </div>
+
+        <!-- 상품 부분-->
         <div id="product_items">
             <div id="product1">
                 <ul>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="사과">
+                            <a target="_blank" href="./product_order.html"><img src="./image/apple.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="딸기">
+                            <a target="_blank" href="./product_order.html"><img src="./image/strawberry.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="청포도">
+                            <a target="_blank" href="./product_order.html"><img src="./image/bluegrape.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="두리안">
+                            <a target="_blank" href="./product_order.html"><img src="./image/dorian.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="한라봉">
+                            <a target="_blank" href="./product_order.html"><img src="./image/hanrabong.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="망고">
+                            <a target="_blank" href="./product_order.html"><img src="./image/mango.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="파인애플">
+                            <a target="_blank" href="./product_order.html"><img src="./image/pineapple.jpg" alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="고구마">
+                            <a target="_blank" href="./product_order.html"><img src="./image/sweetpotato.jpg"
+                                    alt=""></a>
+                        </button>
                     </li>
                     <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
-                    </li>
-                    <li>
-                        <a href="#"><img src="./image/goat.jpg" alt=""></a>
+                        <button
+                            style="--bs-btn-bg: fff; --bs-btn-border-color: fff; --bs-btn-hover-bg:fff; --bs-btn-hover-border-color:fff;"
+                            type="button" class="btn btn-primary" data-bs-toggle="tooltip" title="토마토">
+                            <a target="_blank" href="./product_order.html"><img src="./image/tamato.jpg" alt=""></a>
+                        </button>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <!-- 푸터 영역 -->
+    <!-- 푸터 부분 -->
     <footer id="main_footer">
         <h3>Contact : Java-BackEnd@gmail.com</h3>
         <h3>Phone : 010-1234-5678</h3>
         <address>www.GoatShopping.com</address>
     </footer>
+
+    <script>
+        // 상품 :hover 시 툴팁 초기화 JS Codes
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+        })
+    </script>
 </body>
 
 </html>
